@@ -1,0 +1,176 @@
+{
+  "eda": {
+    "rows": 7043,
+    "cols": 21,
+    "n_churn": 1869,
+    "churn_rate": 0.2653698707936959,
+    "blank_totalcharges": 11,
+    "by_contract": {
+      "Month-to-month": 0.427,
+      "One year": 0.113,
+      "Two year": 0.028
+    },
+    "by_internet": {
+      "DSL": 0.19,
+      "Fiber optic": 0.419,
+      "No": 0.074
+    },
+    "by_payment": {
+      "Bank transfer (automatic)": 0.167,
+      "Credit card (automatic)": 0.152,
+      "Electronic check": 0.453,
+      "Mailed check": 0.191
+    },
+    "by_techsupport": {
+      "No": 0.416,
+      "No internet service": 0.074,
+      "Yes": 0.152
+    },
+    "by_security": {
+      "No": 0.418,
+      "No internet service": 0.074,
+      "Yes": 0.146
+    },
+    "by_tenure_band": {
+      "0-12": 0.474,
+      "13-24": 0.287,
+      "25-48": 0.204,
+      "49+": 0.095
+    }
+  },
+  "cv": [
+    {
+      "model": "Logistic Regression",
+      "resampling": "None",
+      "recall": 0.5438127090301004,
+      "precision": 0.6520936350656179,
+      "f1": 0.5924124081667455,
+      "roc_auc": 0.846149025453707
+    },
+    {
+      "model": "Random Forest",
+      "resampling": "None",
+      "recall": 0.48561872909699,
+      "precision": 0.6273440137728648,
+      "f1": 0.5470802154316223,
+      "roc_auc": 0.8202460204021408
+    },
+    {
+      "model": "XGBoost",
+      "resampling": "None",
+      "recall": 0.5150501672240801,
+      "precision": 0.6120949260820733,
+      "f1": 0.55898466285537,
+      "roc_auc": 0.8246434049471538
+    },
+    {
+      "model": "SVM (RBF)",
+      "resampling": "None",
+      "recall": 0.4983277591973244,
+      "precision": 0.6811079003070616,
+      "f1": 0.5752879415066416,
+      "roc_auc": 0.7988265722305673
+    },
+    {
+      "model": "Logistic Regression",
+      "resampling": "SMOTE",
+      "recall": 0.7879598662207358,
+      "precision": 0.5257677692222263,
+      "f1": 0.6304794206697565,
+      "roc_auc": 0.8447718945308568
+    },
+    {
+      "model": "Random Forest",
+      "resampling": "SMOTE",
+      "recall": 0.5571906354515049,
+      "precision": 0.5893995943848681,
+      "f1": 0.5726168828443458,
+      "roc_auc": 0.8188707093302243
+    },
+    {
+      "model": "XGBoost",
+      "resampling": "SMOTE",
+      "recall": 0.5725752508361204,
+      "precision": 0.5903009776714765,
+      "f1": 0.5811223942463676,
+      "roc_auc": 0.8221092214943404
+    },
+    {
+      "model": "SVM (RBF)",
+      "resampling": "SMOTE",
+      "recall": 0.7177257525083613,
+      "precision": 0.5520755449664208,
+      "f1": 0.62377402912286,
+      "roc_auc": 0.8265191647691082
+    }
+  ],
+  "final": {
+    "model": "Logistic Regression",
+    "resampling": "None",
+    "roc_auc": 0.8420341522643313,
+    "at_0.5": {
+      "threshold": 0.5,
+      "recall": 0.5588235294117647,
+      "precision": 0.6572327044025157,
+      "f1": 0.6040462427745664,
+      "tp": 209,
+      "fn": 165,
+      "fp": 109,
+      "tn": 926
+    },
+    "at_tuned": {
+      "threshold": 0.32,
+      "recall": 0.7299465240641712,
+      "precision": 0.533203125,
+      "f1": 0.6162528216704289,
+      "tp": 273,
+      "fn": 101,
+      "fp": 239,
+      "tn": 796
+    },
+    "n_test": 1409,
+    "n_test_churn": 374,
+    "top_features": [
+      [
+        "num__tenure",
+        1.1227190428879803
+      ],
+      [
+        "num__MonthlyCharges",
+        0.5141824362226547
+      ],
+      [
+        "num__TotalCharges",
+        0.43749434153252903
+      ],
+      [
+        "cat__InternetService_Fiber optic",
+        0.3240136393689416
+      ],
+      [
+        "cat__Contract_Month-to-month",
+        0.2918595470349485
+      ],
+      [
+        "cat__InternetService_DSL",
+        0.2674290091157572
+      ],
+      [
+        "cat__Contract_Two year",
+        0.25656349651369603
+      ],
+      [
+        "cat__PaperlessBilling_No",
+        0.1628228875626035
+      ],
+      [
+        "cat__MultipleLines_No",
+        0.13574142627214367
+      ],
+      [
+        "cat__Dependents_Yes",
+        0.11118411080230635
+      ]
+    ]
+  }
+}
